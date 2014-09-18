@@ -8,10 +8,10 @@ A set of rules and scripts for making interviews for Hack Bulgaria's courses
 1. Download all people from F6S as a CSV file.
 2. Import that CSV file into a Google Documents Spreadsheet
 3. Trim the data and make it have 4 columns:
-    3.1 Name
-    3.2 Email
-    3.3 Date
-    3.4 Hour
+    - Name
+    - Email
+    - Date
+    - Hour
 4. Export the data as CSV file again.
 5. Transform it to a JSON file (You can do that with http://www.convertcsv.com/csv-to-json.htm)
 6. Save the file as `people.json`
