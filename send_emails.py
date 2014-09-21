@@ -22,11 +22,12 @@ email_message = open('EMAIL_MESSAGE').read()
 
 for person in people:
     html = deepcopy(email_message).format(
-        person['Name'],
-        person['Date'],
-        person['Hour'])
+        person['Name'].strip(),
+        person['Date'].strip(),
+        person['Hour']).strip()
 
-    you = person['Email']
+    #white spaces at  the end
+    you = person['Email'].strip()
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = "HackBulgaria дата и час за интервю."
