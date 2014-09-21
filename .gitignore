@@ -1,3 +1,4 @@
 settings.py
 people.json
 __pycache__
+EMAIL_MESSAGE
