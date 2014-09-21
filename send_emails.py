@@ -21,7 +21,7 @@ server.login(EMAIL, PASSWORD)
 email_message = open('EMAIL_MESSAGE').read()
 
 for person in people:
-    html = deepcopy(email_message) .format(
+    html = deepcopy(email_message).format(
         person['Name'],
         person['Date'],
         person['Hour'])
