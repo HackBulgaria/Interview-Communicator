@@ -6,11 +6,7 @@ import time
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-EMAIL = 'ivaylo@hackbulgaria.com'
-PASSWORD = "YOUR-PASSWORD-HERE!"
-SMPT_SERVER = 'giga.superhosting.bg'
-SMPT_SERVER_PORT = 26
-
+from settings import SMPT_SERVER, SMPT_SERVER_PORT, EMAIL, PASSWORD
 
 json_data = open('people.json')
 people = json.load(json_data)
