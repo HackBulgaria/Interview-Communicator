@@ -55,18 +55,17 @@ for person in people:
         </html>
         """.format(person['Name'], person['Date'], person['Hour'])
 
-    me = "ivaylo@hackbulgaria.com"
     you = person['Email']
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = "HackBulgaria дата и час за интервю."
-    msg['From'] = me
+    msg['From'] = EMAIL
     msg['To'] = you
 
     part1 = MIMEText(html, 'html')
     msg.attach(part1)
 
-    server.sendmail(me, you, msg.as_string())
+    server.sendmail(EMAIL, you, msg.as_string())
     print("Send: " + you)
 
     time.sleep(4)
