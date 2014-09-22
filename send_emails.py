@@ -6,7 +6,7 @@ import time
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from settings import SMPT_SERVER, SMPT_SERVER_PORT, EMAIL, PASSWORD
+from settings import SMPT_SERVER, SMPT_SERVER_PORT, EMAIL, PASSWORD, SUBJECT
 
 from copy import deepcopy
 
@@ -30,7 +30,7 @@ for person in people:
     you = person['Email'].strip()
 
     msg = MIMEMultipart('alternative')
-    msg['Subject'] = "HackBulgaria дата и час за интервю."
+    msg['Subject'] = SUBJECT
     msg['From'] = EMAIL
     msg['To'] = you
 
