@@ -25,7 +25,7 @@ for person in people:
         person['Date'].strip(),
         person['Hour']).strip()
 
-    #white spaces at  the end
+    # White spaces at the end.
     you = person['Email'].strip()
 
     msg = MIMEMultipart('alternative')
