@@ -20,13 +20,12 @@ server.login(EMAIL, PASSWORD)
 email_message = open('EMAIL_MESSAGE').read()
 
 for person in people:
-    html = deepcopy(email_message).format(
-        person['Name'].strip(),
-        person['Date'].strip(),
-        person['Hour']).strip()
+    person = {key: value.strip() for key, value in person.items()}
+
+    html = deepcopy(email_message).format(**person)
 
     # White spaces at the end.
-    you = person['Email'].strip()
+    you = person['Email']
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = SUBJECT
