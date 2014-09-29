@@ -3,7 +3,7 @@ Interview-Communicator
 
 A set of rules and scripts for making interviews for Hack Bulgaria's courses
 
-## Steps for making interview schedule with studensts.
+## Steps for making interview schedule with students.
 
 1. Download all people from F6S as a CSV file.
 2. Import that CSV file into a Google Documents Spreadsheet
