@@ -36,14 +36,23 @@ SMPT_SERVER = 'smtp.gmail.com'
 SMPT_SERVER_PORT = 587
 ```
 
-### EMAIL_MESSAGE
+### Email messages and running the Script
+
+In order to send an email, you have to create `messages` folder (which is in `.gitignore`).
+
+`send_emails.py` will look inside that folder for the given message.
+
+In order to run the script, you have to pass the email body filename, which you have created in `messages/` folder.
+
+For example, if we have `messages/NODE_ONLINE` file, in order to run the script, you will have to do the following:
+
+```
+python send_emails NODE_ONLINE
+```
 
 There is an `example_EMAIL_MESSAGE` which contains the email body.
 
-You will have to rename it to `EMAIL_MESSAGE`.
-
 Change it accordingly but **do not remove the `{}` placeholders** from the string.
-They are in a particular order - Name, Date, Hour
 
 ### people.json
 
