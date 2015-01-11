@@ -1,6 +1,7 @@
 import smtplib
 import json
 import time
+import sys
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -8,6 +9,12 @@ from email.mime.text import MIMEText
 from settings import SMPT_SERVER, SMPT_SERVER_PORT, EMAIL, PASSWORD, SUBJECT
 
 from copy import deepcopy
+
+if len(sys.argv) < 2:
+    print("No message given. You should give the filename of the message, located in messages/ folder, that you want to send")
+    print("For example: python send_emails.py NODE_ONLINE")
+    sys.exit()
+
 
 json_data = open('people.json')
 people = json.load(json_data)
@@ -17,7 +24,9 @@ server.ehlo()
 server.starttls()
 server.login(EMAIL, PASSWORD)
 
-email_message = open('EMAIL_MESSAGE').read()
+
+email_message = open('messages/{}'.format(sys.argv[1])).read()
+print(email_message)
 
 for person in people:
     person = {key: value.strip() for key, value in person.items()}
