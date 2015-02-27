@@ -6,9 +6,11 @@ import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from settings import SMPT_SERVER, SMPT_SERVER_PORT, EMAIL, PASSWORD, SUBJECT
+from settings import SMPT_SERVER, SMPT_SERVER_PORT, EMAIL, PASSWORD, SUBJECT, TIMEOUT
 
 from copy import deepcopy
+
+from random import randint
 
 if len(sys.argv) < 2:
     print("No message given. You should give the filename of the message, located in messages/ folder, that you want to send")
@@ -47,6 +49,6 @@ for person in people:
     server.sendmail(EMAIL, you, msg.as_string())
     print("Send: " + you)
 
-    time.sleep(4)
+    time.sleep(randint(TIMEOUT, TIMEOUT + 5))
 
 server.quit()
